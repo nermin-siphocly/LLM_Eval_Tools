@@ -5,6 +5,7 @@ This repository contains implementations of the evaluation tools used in the stu
 This repository include scripts that are designed to operate directly on each of the two datasets used in the paper:
 
 •	DS1: Question–answer pairs derived from EU cross-border healthcare information materials.
+
 •	DS2: Structured legal case scenarios related to EU healthcare law.
 
 The provided code pipelines load these datasets, preprocess the texts, generate evaluation scores for LLM responses, and output comparable metrics across models.
@@ -54,9 +55,13 @@ Keyword Matching Metrics
 The repository also includes scripts that compute:
 
 •	Exact keyword matching
+
 •	Partial keyword matching
+
 •	Semantic keyword similarity
+
 •	Set-level embedding similarity
+
 •	Keyword-level Word Mover’s Distance
 
 Together, these tools provide a multi-level evaluation pipeline for assessing how well LLM-generated responses reproduce the semantic meaning and key legal concepts present in expert reference answers. The repository enables researchers to reproduce the experiments from the paper and extend the evaluation to additional LLM systems or datasets.
