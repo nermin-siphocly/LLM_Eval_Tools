@@ -5,7 +5,6 @@ This repository contains implementations of the evaluation tools used in the stu
 This repository include scripts that are designed to operate directly on each of the two datasets used in the paper:
 
 •	DS1: Question–answer pairs derived from EU cross-border healthcare information materials.
-
 •	DS2: Structured legal case scenarios related to EU healthcare law.
 
 The provided code pipelines load these datasets, preprocess the texts, generate evaluation scores for LLM responses, and output comparable metrics across models.
@@ -35,19 +34,30 @@ A biomedical language model trained on medical literature. It helps capture heal
 Word Mover’s Distance (WMD)
 
 Computes the semantic distance between documents by measuring the minimum cost required to transform one document’s word embeddings into another.
+
 GPTScore
+
 A probability-based evaluation method where a generative model evaluates responses using structured prompts and assigns holistic quality scores.
+
 Keyword-Based Evaluation Tools
+
 KeyBERT
+
 Extracts representative keywords from texts using embedding similarity between document representations and candidate phrases.
+
 YAKE (Yet Another Keyword Extractor)
+
 A statistical keyword extraction algorithm that identifies important terms based on word frequency, position, casing, and contextual distribution.
+
 Keyword Matching Metrics
+
 The repository also includes scripts that compute:
+
 •	Exact keyword matching
 •	Partial keyword matching
 •	Semantic keyword similarity
 •	Set-level embedding similarity
 •	Keyword-level Word Mover’s Distance
+
 Together, these tools provide a multi-level evaluation pipeline for assessing how well LLM-generated responses reproduce the semantic meaning and key legal concepts present in expert reference answers. The repository enables researchers to reproduce the experiments from the paper and extend the evaluation to additional LLM systems or datasets.
 
