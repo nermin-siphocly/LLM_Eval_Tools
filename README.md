@@ -14,11 +14,16 @@ This repository is structured as follows:
 
 LLM_Eval_Tools/
 │
+
 ├── FullTextEvaluation/
 │   │
+
 │   ├── BertScore/
+
 │   │   ├── bertscore_ds1.py
+
 │   │   └── bertscore_ds2.py
+
 │   │
 │   ├── SemanticScore/
 │   │   ├── semantic_comparison_of_texts_ds1.py
