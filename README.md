@@ -4,9 +4,9 @@ Evaluation Tools for LLM Responses
 This repository contains implementations of the evaluation tools used in the study “AI and Patient Safety: A Comparative Evaluation of Generative AI Agents in EU Healthcare Law Consultations.” The code provides a reproducible framework for evaluating large language model (LLM) responses against expert-validated reference answers using both full-text semantic similarity metrics and keyword-based conceptual evaluation. 
 This repository include scripts that are designed to operate directly on each of the two datasets used in the paper:
 
-•	DS1: Question–answer pairs derived from EU cross-border healthcare information materials.
+•	DS1: Question–answer pairs derived from EU cross-border healthcare information materials. (Datasets/QA.xlsx)
 
-•	DS2: Structured legal case scenarios related to EU healthcare law.
+•	DS2: Structured legal case scenarios related to EU healthcare law. (Datasets/KC.xlsx)
 
 The provided code pipelines load these datasets, preprocess the texts, generate evaluation scores for LLM responses, and output comparable metrics across models.
 
