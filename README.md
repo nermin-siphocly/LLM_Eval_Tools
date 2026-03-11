@@ -114,3 +114,5 @@ Keyword Matching Metrics: The repository includes scripts that compute:
 
 Together, these tools provide a multi-level evaluation pipeline for assessing how well LLM-generated responses reproduce the semantic meaning and key legal concepts present in expert reference answers. The repository enables researchers to reproduce the experiments from the paper and extend the evaluation to additional LLM systems or datasets.
 
+The scripts were designed to run on Google Colab.
+
