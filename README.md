@@ -16,6 +16,7 @@ LLM_Eval_Tools/
 │
 
 ├── FullTextEvaluation/
+
 │   │
 
 │   ├── BertScore/
@@ -25,22 +26,39 @@ LLM_Eval_Tools/
 │   │   └── bertscore_ds2.py
 
 │   │
+
 │   ├── SemanticScore/
+
 │   │   ├── semantic_comparison_of_texts_ds1.py
+
 │   │   └── semantic_comparison_of_texts_ds2.py
+
 │   │
+
 │   └── WordMoverDistance/
+
 │       └── word_mover's_distance_(for_texts).py
+
 │
+
 └── KeywordsEvaluation/
+
     │
+    
     ├── Embedding_Based/
+    
     │   ├── keywords_extraction.py
+    
     │   └── compare_cases_keywords.py
+    
     │
+    
     └── YAKE/
+    
         └── yake_kw_extraction.py
+        
         └── yake_keywords_comparison.py
+        
 
 Full-Text Evaluation Tools (applied on DS1 and DS2)
 
