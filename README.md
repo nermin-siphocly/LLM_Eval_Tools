@@ -10,39 +10,66 @@ This repository include scripts that are designed to operate directly on each of
 
 The provided code pipelines load these datasets, preprocess the texts, generate evaluation scores for LLM responses, and output comparable metrics across models.
 
-Full-Text Evaluation Tools
+This repository is structured as follows:
+
+LLM_Eval_Tools/
+│
+├── FullTextEvaluation/
+│   │
+│   ├── BertScore/
+│   │   ├── bertscore_ds1.py
+│   │   └── bertscore_ds2.py
+│   │
+│   ├── SemanticScore/
+│   │   ├── semantic_comparison_of_texts_ds1.py
+│   │   └── semantic_comparison_of_texts_ds2.py
+│   │
+│   └── WordMoverDistance/
+│       └── word_mover's_distance_(for_texts).py
+│
+└── KeywordsEvaluation/
+    │
+    ├── Embedding_Based/
+    │   ├── keywords_extraction.py
+    │   └── compare_cases_keywords.py
+    │
+    └── YAKE/
+        └── yake_kw_extraction.py
+        └── yake_keywords_comparison.py
+
+Full-Text Evaluation Tools (applied on DS1 and DS2)
 
 BERTScore
 
 Measures semantic similarity between generated responses and reference answers by aligning contextual token embeddings from a pretrained BERT model. It computes precision, recall, and F1 scores based on semantic token matching.
 
-Sentence-BERT (SBERT)
+Semanatic Score [Sentence-BERT (SBERT)]
 
 Generates fixed-length sentence embeddings that allow efficient semantic similarity comparison using cosine similarity. This enables evaluation of overall semantic alignment between responses and ground-truth answers.
 
-all-MiniLM-L6-v2
+     all-MiniLM-L6-v2
 
-A lightweight general-purpose sentence transformer model used for computing baseline semantic similarity between texts.
+         A lightweight general-purpose sentence transformer model used for computing baseline semantic similarity between texts.
 
-LegalBERT
+     LegalBERT
 
-A domain-specific transformer model trained on legal corpora. It captures legal terminology and concepts, making it particularly useful for evaluating responses in EU healthcare law contexts.
+         A domain-specific transformer model trained on legal corpora. It captures legal terminology and concepts, making it particularly
+         useful for evaluating responses in EU healthcare law contexts.
 
-BioBERT
+     BioBERT
 
-A biomedical language model trained on medical literature. It helps capture healthcare-related terminology within responses.
+         A biomedical language model trained on medical literature. It helps capture healthcare-related terminology within responses.
 
 Word Mover’s Distance (WMD)
 
 Computes the semantic distance between documents by measuring the minimum cost required to transform one document’s word embeddings into another.
 
-GPTScore
 
-A probability-based evaluation method where a generative model evaluates responses using structured prompts and assigns holistic quality scores.
+Keyword-Based Evaluation Tools (Applied on DS2 only)
 
-Keyword-Based Evaluation Tools
+Keywords are extracted from texts using two methods; embedding-based (Keybert, LegalBert, and BioBert) in addition to the statistical method (YAKE).
 
-KeyBERT
+Embedding-Based
 
 Extracts representative keywords from texts using embedding similarity between document representations and candidate phrases.
 
@@ -50,9 +77,7 @@ YAKE (Yet Another Keyword Extractor)
 
 A statistical keyword extraction algorithm that identifies important terms based on word frequency, position, casing, and contextual distribution.
 
-Keyword Matching Metrics
-
-The repository also includes scripts that compute:
+Keyword Matching Metrics: The repository includes scripts that compute:
 
 •	Exact keyword matching
 
