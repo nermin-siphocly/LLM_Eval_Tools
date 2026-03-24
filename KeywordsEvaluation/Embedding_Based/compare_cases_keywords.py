@@ -140,52 +140,6 @@ def processing(refs, llm, prefix, df_keywords, comp_name):
   df_keywords[f'{prefix}_partial_score'] = part
   df_keywords[f'{prefix}_wmd_score'] = wmd
 
-"""
-def compute_scores(references, predictions, model, threshold=0.8, word_overlap_threshold=2):
-    exact_scores, semantic_scores, partial_scores = [], [], []
-
-    for ref, pred in zip(references, predictions):
-        set2 = ref
-        set1 = pred
-        # Exact Match
-        exact_count = sum(1 for expr in set2 if expr in set1)
-        exact_score = exact_count / len(set2) if set2 else 0
-        exact_scores.append(exact_score)
-
-        # Semantic Match
-
-        embeddings1 = model.encode(set1)
-        embeddings2 = model.encode(set2)
-
-        sem_count = 0
-        for i, expr2 in enumerate(set2):
-            for j, expr1 in enumerate(set1):
-                similarity = cosine_similarity([embeddings2[i]], [embeddings1[j]])[0][0]
-                if similarity >= threshold:
-                    sem_count += 1
-                    break
-        semantic_scores.append(sem_count / len(set2) if set2 else 0)
-        '''
-        sem_score = 0
-        for i, expr2 in enumerate(set2):
-          max_sim = max(cosine_similarity([embeddings2[i]], embeddings1)[0])
-          sem_score += max_sim
-        semantic_scores.append(sem_score / len(set2) if set2 else 0)
-        '''
-        # Partial Match
-        partial_count = 0
-        for expr2 in set2:
-            words2 = set(expr2.split())
-            for expr1 in set1:
-                words1 = set(expr1.split())
-                if len(words1.intersection(words2)) >= word_overlap_threshold:
-                    partial_count += 1
-                    break
-        partial_scores.append(partial_count / len(set2) if set2 else 0)
-
-    return exact_scores, semantic_scores, partial_scores
-
-"""
 
 df_keywords = pd.DataFrame()
 
@@ -208,21 +162,3 @@ processing(refs, deepseek, 'deepseek', df_keywords, 'maxsum')
 # Save the DataFrame to an Excel file
 df_keywords.to_excel('ALL_maxsum.xlsx', index=False)
 
-'''
-df_keywords = pd.DataFrame()
-
-file_sources = {
-    'default_mmr.xlsx': 'df',
-    'legal_mmr.xlsx': 'lgl',
-    'biobert_mmr.xlsx': 'bio'
-}
-'''
-
-# Main processing for gpt
-#processing(file_sources, 'GPT', 'gpt', df_keywords, 'mmr')
-
-#Main Processing for Grok
-#processing(file_sources, 'Grok', 'grok', df_keywords, 'mmr')
-
-#Main Processing for DeepSeek
-#processing(file_sources, 'DeepSeek', 'deepseek', df_keywords, 'mmr')
